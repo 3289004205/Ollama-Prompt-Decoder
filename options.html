@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ollama 图片提示词反推设置</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main class="settings">
+      <h1>Ollama 设置</h1>
+      <form id="settingsForm">
+        <label>
+          <span>Ollama 服务地址</span>
+          <input id="endpoint" name="endpoint" type="url" placeholder="http://localhost:11434" required>
+        </label>
+        <label>
+          <span>模型名称</span>
+          <input id="model" name="model" type="text" placeholder="qwen3.5:27b" list="modelSuggestions" required>
+          <datalist id="modelSuggestions">
+            <option value="qwen3.5:27b"></option>
+            <option value="qwen2.5vl:7b"></option>
+            <option value="llava:latest"></option>
+            <option value="minicpm-v:latest"></option>
+          </datalist>
+        </label>
+        <label>
+          <span>中英文提示词字符上限</span>
+          <input id="maxChars" name="maxChars" type="number" min="300" max="3000" step="50" value="2000" required>
+        </label>
+        <div class="actions">
+          <button type="submit">保存设置</button>
+          <button id="testConnection" type="button">测试连接</button>
+        </div>
+        <p id="status" role="status"></p>
+      </form>
+      <section class="note">
+        <h2>使用前检查</h2>
+        <p>本机需要先启动 Ollama，并确保模型已拉取。视觉反推需要模型支持图片输入；如果当前模型不支持图片，Ollama 会返回模型能力相关错误。</p>
+      </section>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ollama 图片提示词反推</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup">
+      <h1>图片提示词反推</h1>
+      <p>网页图片右上角会显示“提取提示词”角标，点击后使用本地 Ollama 分析图片。</p>
+      <dl>
+        <div>
+          <dt>当前模型</dt>
+          <dd id="model">qwen3.5:27b</dd>
+        </div>
+        <div>
+          <dt>服务地址</dt>
+          <dd id="endpoint">http://localhost:11434</dd>
+        </div>
+      </dl>
+      <button id="openOptions" type="button">设置模型</button>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

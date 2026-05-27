@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Ollama 图片提示词反推",
+  "description": "在网页图片右上角显示提取角标，使用本地 Ollama 模型反推 JSON、中文和英文提示词。",
+  "version": "1.0.0",
+  "permissions": [
+    "declarativeNetRequest",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "http://localhost:11434/*",
+    "http://127.0.0.1:11434/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Ollama 图片提示词反推",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html"
+}

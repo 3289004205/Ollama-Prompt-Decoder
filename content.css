@@ -1,0 +1,195 @@
+.ollama-prompt-badge {
+  position: fixed;
+  z-index: 2147483646;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  padding: 0 9px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 7px;
+  background: rgba(20, 24, 32, 0.86);
+  color: #fff;
+  font: 12px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  user-select: none;
+  backdrop-filter: blur(8px);
+}
+
+.ollama-prompt-badge:hover {
+  background: rgba(16, 88, 255, 0.92);
+}
+
+.ollama-prompt-panel {
+  position: fixed;
+  z-index: 2147483647;
+  width: min(420px, calc(100vw - 24px));
+  max-height: min(520px, calc(100vh - 24px));
+  overflow: hidden;
+  border: 1px solid rgba(20, 24, 32, 0.12);
+  border-radius: 10px;
+  background: #fff;
+  color: #18202f;
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.24);
+  font: 13px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.ollama-prompt-panel * {
+  box-sizing: border-box;
+}
+
+.ollama-prompt-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  height: 44px;
+  padding: 0 12px;
+  border-bottom: 1px solid #e7eaf0;
+}
+
+.ollama-prompt-panel__title {
+  overflow: hidden;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ollama-prompt-panel__close {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #455064;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.ollama-prompt-panel__close:hover {
+  background: #f1f3f7;
+}
+
+.ollama-prompt-panel__tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding: 10px 12px 0;
+}
+
+.ollama-prompt-panel__tab {
+  height: 30px;
+  border: 1px solid #d8deea;
+  border-radius: 7px;
+  background: #f7f8fb;
+  color: #354058;
+  cursor: pointer;
+  font: inherit;
+}
+
+.ollama-prompt-panel__tab[aria-selected="true"] {
+  border-color: #2f6bff;
+  background: #edf3ff;
+  color: #174ac8;
+  font-weight: 650;
+}
+
+.ollama-prompt-panel__body {
+  padding: 12px;
+}
+
+.ollama-prompt-panel__output {
+  min-height: 180px;
+  max-height: 340px;
+  margin: 0;
+  overflow: auto;
+  padding: 12px;
+  border: 1px solid #e2e6ef;
+  border-radius: 8px;
+  background: #fbfcfe;
+  color: #172033;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font: 12px/1.6 ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+}
+
+.ollama-prompt-panel__status {
+  padding: 12px 12px 14px;
+  color: #5b667a;
+}
+
+.ollama-prompt-panel__progress {
+  padding: 12px 12px 0;
+}
+
+.ollama-prompt-panel__progress-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.ollama-prompt-panel__stage {
+  overflow: hidden;
+  color: #243047;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ollama-prompt-panel__percent {
+  color: #174ac8;
+  font-weight: 700;
+}
+
+.ollama-prompt-panel__track {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e8edf7;
+}
+
+.ollama-prompt-panel__bar {
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #2f6bff, #19a974);
+  transition: width 180ms ease;
+}
+
+.ollama-prompt-panel__detail {
+  min-height: 20px;
+  margin-top: 8px;
+  color: #5b667a;
+}
+
+.ollama-prompt-panel__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 0 12px 12px;
+}
+
+.ollama-prompt-panel__copy,
+.ollama-prompt-panel__save-library {
+  height: 32px;
+  border: 1px solid #d4dae6;
+  border-radius: 7px;
+  background: #fff;
+  color: #202b3d;
+  cursor: pointer;
+  font: inherit;
+  padding: 0 12px;
+}
+
+.ollama-prompt-panel__copy:hover,
+.ollama-prompt-panel__save-library:hover {
+  background: #f5f7fb;
+}
+
+.ollama-prompt-panel__save-library:disabled {
+  cursor: default;
+  opacity: 0.72;
+}

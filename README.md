@@ -24,10 +24,10 @@
    ollama serve
    ```
 
-2. 拉取模型。默认模型为用户指定的 `qwen3.5:27b`：
+2. 拉取模型。目前我使用的模型为 `qwen3-vl:4b`：
 
    ```powershell
-   ollama pull qwen3.5:27b
+   ollama pull qwen3-vl:4b
    ```
 
 3. 打开 Chrome：`chrome://extensions/`
